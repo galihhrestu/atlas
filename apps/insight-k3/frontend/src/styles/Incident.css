@@ -1,0 +1,581 @@
+/* =========================
+CREATE INCIDENT PAGE
+========================= */
+
+
+.incident-form-page{
+
+padding:40px;
+
+background:#f6f8fc;
+
+min-height:100vh;
+
+}
+
+
+
+
+
+/* HEADER */
+
+.form-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+.form-header h1{
+
+font-size:34px;
+
+font-weight:800;
+
+color:#111827;
+
+margin-bottom:8px;
+
+}
+
+
+
+.form-header p{
+
+color:#64748b;
+
+font-size:16px;
+
+}
+
+
+
+
+.report-date{
+
+background:white;
+
+padding:15px 25px;
+
+border-radius:14px;
+
+display:flex;
+
+gap:15px;
+
+align-items:center;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+font-weight:600;
+
+}
+
+
+
+
+
+/* SECTION CARD */
+
+.form-section{
+
+
+background:white;
+
+border-radius:18px;
+
+padding:28px;
+
+margin-bottom:25px;
+
+
+border:1px solid #e5e7eb;
+
+
+box-shadow:
+
+0 8px 25px rgba(15,23,42,.05);
+
+
+}
+
+
+
+
+.form-section h2{
+
+
+font-size:20px;
+
+font-weight:800;
+
+color:#dc2626;
+
+
+margin-bottom:25px;
+
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+
+}
+
+
+
+
+
+/* GRID */
+
+
+.form-grid{
+
+
+display:grid;
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+
+gap:20px;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+.form-section label{
+
+
+display:block;
+
+
+font-size:14px;
+
+
+font-weight:600;
+
+
+color:#374151;
+
+
+margin-bottom:8px;
+
+
+}
+
+
+
+
+
+.form-section input,
+
+
+.form-section select,
+
+
+.form-section textarea{
+
+
+width:100%;
+
+
+padding:12px 14px;
+
+
+border-radius:10px;
+
+
+border:1px solid #d1d5db;
+
+
+font-size:14px;
+
+
+background:#fff;
+
+
+transition:.2s;
+
+
+}
+
+
+
+
+
+.form-section textarea{
+
+
+resize:none;
+
+
+}
+
+
+
+
+
+.form-section input:focus,
+
+
+.form-section select:focus,
+
+
+.form-section textarea:focus{
+
+
+outline:none;
+
+
+border-color:#dc2626;
+
+
+box-shadow:
+
+0 0 0 3px rgba(220,38,38,.15);
+
+
+}
+
+
+
+
+
+/* UPLOAD */
+
+
+.upload-box{
+
+
+height:160px;
+
+
+border:2px dashed #cbd5e1;
+
+
+border-radius:16px;
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+gap:10px;
+
+
+color:#64748b;
+
+
+background:#fafafa;
+
+
+}
+
+
+
+
+.upload-box input{
+
+
+width:auto;
+
+
+border:none;
+
+
+}
+
+
+
+
+
+
+/* BUTTON */
+
+
+.form-action{
+
+
+display:flex;
+
+
+justify-content:flex-end;
+
+
+gap:15px;
+
+
+margin-top:30px;
+
+
+}
+
+
+
+.cancel-btn,
+
+
+.submit-btn{
+
+
+padding:13px 30px;
+
+
+border-radius:12px;
+
+
+font-weight:700;
+
+
+cursor:pointer;
+
+
+border:none;
+
+
+}
+
+
+
+.cancel-btn{
+
+
+background:#e5e7eb;
+
+
+color:#374151;
+
+
+}
+
+
+
+.submit-btn{
+
+
+background:#dc2626;
+
+
+color:white;
+
+
+}
+
+
+
+
+
+.submit-btn:hover{
+
+
+background:#b91c1c;
+
+
+}
+
+
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:900px){
+
+
+.form-grid{
+
+
+grid-template-columns:1fr 1fr;
+
+
+}
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+.form-grid{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.form-header{
+
+
+flex-direction:column;
+
+align-items:flex-start;
+
+
+}
+
+
+}
+
+
+/* ==================================================
+INSIGHTK3 - INCIDENT FORM DARK MODE
+================================================== */
+
+body.dark-mode .incident-form-page {
+  background: var(--app-bg);
+}
+
+body.dark-mode .form-header h1 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .form-header p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .report-date,
+body.dark-mode .form-section {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .form-section label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .form-section input,
+body.dark-mode .form-section select,
+body.dark-mode .form-section textarea {
+  background: #0f172a;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+body.dark-mode .form-section input:focus,
+body.dark-mode .form-section select:focus,
+body.dark-mode .form-section textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+body.dark-mode .form-section input::placeholder,
+body.dark-mode .form-section textarea::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-mode .upload-box {
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+  border-color: #475569;
+}
+
+body.dark-mode .cancel-btn {
+  background: #334155;
+  color: #f8fafc;
+}
+
+/* ==================================================
+STRUCTURED LOCATION + ROOT CAUSE CLASSIFICATION
+================================================== */
+
+.form-field-wide {
+  grid-column: span 2;
+}
+
+.field-hint {
+  display: block;
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.location-summary-card {
+  display: grid;
+  gap: 5px;
+  padding: 14px 16px;
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.location-summary-card span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.location-summary-card strong {
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.location-summary-card small {
+  color: #64748b;
+  line-height: 1.45;
+}
+
+body.dark-mode .field-hint,
+body.dark-mode .location-summary-card span,
+body.dark-mode .location-summary-card small {
+  color: #94a3b8;
+}
+
+body.dark-mode .location-summary-card {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+body.dark-mode .location-summary-card strong {
+  color: #f8fafc;
+}
+
+@media(max-width:900px){
+  .form-field-wide {
+    grid-column: span 2;
+  }
+}
+
+@media(max-width:600px){
+  .form-field-wide {
+    grid-column: span 1;
+  }
+}

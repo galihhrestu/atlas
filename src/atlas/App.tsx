@@ -134,6 +134,7 @@ const dashboards: Dashboard[] = [
     eyebrow: "Health, Safety & Environment",
     description: "Monitoring keselamatan kerja, incident, near miss, dan tindak lanjut K3.",
     featured: true,
+    route: "/insight-k3",
   },
 ];
 

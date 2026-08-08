@@ -1,0 +1,894 @@
+/* =============================================================
+   INSIGHTK3 RESPONSIVE SYSTEM
+   Desktop, laptop, tablet, and mobile layout overrides.
+   This file is imported last so existing functionality and styles
+   remain intact while layout behavior is corrected.
+============================================================= */
+
+:root {
+  --page-max-width: 1680px;
+  --page-gutter-desktop: clamp(24px, 3vw, 52px);
+  --page-gutter-tablet: 24px;
+  --page-gutter-mobile: 14px;
+  --mobile-radius: 16px;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+#root,
+.app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+canvas,
+video {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  padding: clamp(20px, 2.4vw, 38px) var(--page-gutter-desktop) 48px;
+}
+
+.dashboard,
+.dashboard-page,
+.incident-form-page,
+.incident-detail-page,
+.investigation-page,
+.investigation-monitoring-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ---------- Topbar ---------- */
+
+.topbar {
+  width: 100%;
+  min-width: 0;
+  padding-inline: var(--page-gutter-desktop);
+  gap: 16px;
+}
+
+.topbar-left,
+.topbar-right {
+  min-width: 0;
+}
+
+.topbar-left {
+  flex: 1 1 auto;
+}
+
+.topbar-right {
+  flex: 0 0 auto;
+}
+
+.system-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.topbar-button-icon,
+.topbar-button-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar-compact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+/* ---------- Fluid typography ---------- */
+
+.page-title h1,
+.dashboard-header h1,
+.dashboard-title,
+.form-header h1,
+.incident-header h1,
+.analytics-hero h1,
+.management-command-header h1,
+.investigation-page-header h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.page-title p,
+.dashboard-header p,
+.page-subtitle,
+.form-header p,
+.analytics-hero p,
+.management-command-header p,
+.investigation-page-header p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.6;
+}
+
+/* ---------- Grids ---------- */
+
+.kpi-container,
+.card-grid,
+.dashboard-grid,
+.analysis-grid,
+.overview-grid,
+.management-kpi-grid,
+.management-executive-kpis,
+.analytics-kpi-grid,
+.executive-insight-grid,
+.management-signal-grid,
+.management-workflow-strip,
+.investigation-summary-grid,
+.review-summary-grid,
+.verification-info-grid,
+.info-grid,
+.form-grid,
+.investigation-form-grid,
+.root-cause-report-grid,
+.analytics-data-quality {
+  min-width: 0;
+}
+
+.kpi-card,
+.action-card,
+.chart-box,
+.table-container,
+.dashboard-card,
+.panel,
+.analytics-kpi-card,
+.analytics-section-card,
+.executive-insight-card,
+.management-signal-card,
+.investigation-card,
+.investigation-summary-card,
+.detail-card,
+.incident-header-card,
+.master-content,
+.master-sidebar {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* ---------- Tables ---------- */
+
+.responsive-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+.responsive-table-wrapper table {
+  margin: 0;
+}
+
+.table-container,
+.chart-box,
+.master-content,
+.analytics-section-card,
+.investigation-card,
+.detail-card {
+  max-width: 100%;
+}
+
+.responsive-table-wrapper table,
+.analytics-table,
+.risk-heatmap-table {
+  min-width: 680px;
+}
+
+.master-content .responsive-table-wrapper table {
+  min-width: 520px;
+}
+
+th,
+td {
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+/* ---------- Charts ---------- */
+
+.recharts-responsive-container {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.chart-box,
+.analytics-section-card,
+.management-trend-card,
+.management-hotspot-card {
+  overflow: hidden;
+}
+
+/* ---------- Forms ---------- */
+
+.form-section input,
+.form-section select,
+.form-section textarea,
+.investigation-form-grid input,
+.investigation-form-grid select,
+.investigation-form-grid textarea,
+.analytics-filter-grid input,
+.analytics-filter-grid select,
+.master-modal input,
+.login-input {
+  min-width: 0;
+}
+
+/* ---------- Modals ---------- */
+
+.modal-overlay {
+  padding: 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.master-modal,
+.report-modal,
+.login-card {
+  width: min(100%, 680px);
+  max-width: 100%;
+}
+
+.master-modal {
+  width: min(100%, 460px);
+}
+
+.report-modal {
+  max-height: calc(100dvh - 36px);
+}
+
+/* ---------- Master Data ---------- */
+
+.master-container {
+  min-width: 0;
+}
+
+.master-sidebar,
+.master-content {
+  min-width: 0;
+}
+
+.master-title {
+  gap: 16px;
+}
+
+/* ---------- Long strings ---------- */
+
+.incident-id,
+.incident-category,
+.table-secondary-text,
+.report-content-block,
+.incident-description-box,
+.progress-update-item,
+.management-priority-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* =============================================================
+   LARGE LAPTOP / SMALL DESKTOP
+============================================================= */
+
+@media (max-width: 1280px) {
+  .content,
+  .topbar {
+    padding-inline: 28px;
+  }
+
+  .kpi-container,
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .info-grid,
+  .verification-info-grid,
+  .review-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .master-container {
+    gap: 20px;
+  }
+
+  .master-sidebar {
+    width: 220px;
+    flex: 0 0 220px;
+  }
+}
+
+/* =============================================================
+   TABLET LANDSCAPE / SMALL LAPTOP
+============================================================= */
+
+@media (max-width: 1024px) {
+  .topbar {
+    height: 78px;
+    padding-inline: var(--page-gutter-tablet);
+  }
+
+  .content {
+    min-height: calc(100vh - 78px);
+    padding: 24px var(--page-gutter-tablet) 40px;
+  }
+
+  .system-title {
+    font-size: 28px;
+  }
+
+  .menu-button {
+    width: 46px;
+    height: 46px;
+    font-size: 27px;
+  }
+
+  .user-profile {
+    margin-right: 0;
+  }
+
+  .dashboard-page,
+  .incident-form-page,
+  .incident-detail-page,
+  .investigation-page,
+  .investigation-monitoring-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .management-executive-kpis,
+  .analytics-kpi-grid,
+  .management-kpi-grid,
+  .investigation-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analysis-grid,
+  .two-column,
+  .analytics-two-column,
+  .management-overview-grid,
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .master-container,
+  .master-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .master-sidebar,
+  .master-menu {
+    width: 100%;
+    flex: none;
+    padding: 18px;
+  }
+
+  .master-sidebar h3,
+  .master-menu h3 {
+    margin-top: 0;
+  }
+
+  .master-sidebar,
+  .master-menu {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .master-sidebar button,
+  .master-menu button {
+    display: inline-flex;
+    width: auto;
+    min-width: max-content;
+    margin: 0 8px 8px 0;
+    white-space: nowrap;
+  }
+
+  .master-content,
+  .master-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sidebar {
+    width: min(320px, 86vw);
+    padding-top: 82px;
+  }
+}
+
+/* =============================================================
+   TABLET PORTRAIT / LARGE MOBILE
+============================================================= */
+
+@media (max-width: 768px) {
+  .topbar {
+    height: 70px;
+    padding-inline: 14px;
+    gap: 9px;
+  }
+
+  .topbar-left {
+    gap: 10px;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+  .content {
+    min-height: calc(100vh - 70px);
+    padding: 20px var(--page-gutter-mobile) 34px;
+  }
+
+  .menu-button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+
+  .system-title {
+    gap: 5px;
+    font-size: clamp(19px, 5.3vw, 25px);
+  }
+
+  .user-profile {
+    display: none;
+  }
+
+  .mode-button,
+  .login-button {
+    min-height: 42px;
+    padding: 9px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .sidebar {
+    top: 0;
+    width: min(310px, 88vw);
+    padding: 78px 16px 20px;
+  }
+
+  .page-title,
+  .dashboard-header,
+  .form-header,
+  .incident-header,
+  .analytics-hero,
+  .management-command-header,
+  .investigation-page-header,
+  .table-title-row,
+  .investigation-filter-row,
+  .management-detail-title,
+  .management-panel-heading,
+  .analytics-filter-heading,
+  .analytics-section-heading,
+  .section-heading-row,
+  .master-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-title h1,
+  .dashboard-header h1,
+  .dashboard-title,
+  .form-header h1,
+  .incident-header h1,
+  .analytics-hero h1,
+  .management-command-header h1,
+  .investigation-page-header h1 {
+    font-size: clamp(28px, 8.5vw, 38px);
+    margin-top: 0;
+  }
+
+  .kpi-container,
+  .card-grid,
+  .dashboard-grid,
+  .management-kpi-grid,
+  .management-executive-kpis,
+  .analytics-kpi-grid,
+  .executive-insight-grid,
+  .management-signal-grid,
+  .management-workflow-strip,
+  .investigation-summary-grid,
+  .review-summary-grid,
+  .verification-info-grid,
+  .info-grid,
+  .root-cause-report-grid,
+  .analytics-data-quality {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid > :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .action-card {
+    width: 100%;
+    min-height: 0;
+    padding: 22px;
+    align-items: center;
+  }
+
+  .card-icon {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+    font-size: 27px;
+  }
+
+  .number {
+    font-size: 34px;
+  }
+
+  .kpi-card,
+  .chart-box,
+  .table-container,
+  .dashboard-card,
+  .analytics-kpi-card,
+  .analytics-section-card,
+  .management-signal-panel,
+  .investigation-card,
+  .investigation-summary-card,
+  .detail-card,
+  .incident-header-card,
+  .master-content,
+  .panel {
+    padding: 20px;
+    border-radius: var(--mobile-radius);
+  }
+
+  .master-title {
+    gap: 12px;
+  }
+
+  .master-title .add-button,
+  .master-title button {
+    width: 100%;
+  }
+
+  .master-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .master-sidebar h3 {
+    display: none;
+  }
+
+  .master-sidebar button {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .form-grid,
+  .investigation-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-span-2 {
+    grid-column: auto;
+  }
+
+  .incident-form,
+  .form-section {
+    padding: 20px;
+  }
+
+  .incident-form-page {
+    padding-top: 0;
+  }
+
+  .analytics-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-filter-grid > label,
+  .analytics-filter-grid > div {
+    min-width: 0;
+  }
+
+  .investigation-filter-controls,
+  .investigation-sticky-actions,
+  .management-review-actions,
+  .approval-box,
+  .form-action,
+  .modal-action {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .investigation-filter-controls input,
+  .investigation-filter-controls select,
+  .investigation-sticky-actions button,
+  .management-review-actions button,
+  .approval-box button,
+  .form-action button,
+  .modal-action button {
+    width: 100%;
+  }
+
+  .investigation-sticky-actions {
+    position: static;
+    margin-top: 22px;
+  }
+
+  .progress-update-form {
+    grid-template-columns: 1fr;
+  }
+
+  .five-why-item {
+    grid-template-columns: 1fr;
+  }
+
+  .why-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .root-box {
+    width: 100%;
+  }
+
+  .report-modal,
+  .master-modal {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .modal-header h2 {
+    font-size: 24px;
+  }
+
+  .login-page {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 26px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 34px;
+  }
+
+  .recharts-wrapper,
+  .recharts-surface {
+    max-width: 100%;
+  }
+}
+
+/* =============================================================
+   MOBILE
+============================================================= */
+
+@media (max-width: 520px) {
+  .topbar {
+    padding-inline: 10px;
+  }
+
+  .system-title {
+    font-size: 19px;
+  }
+
+  .system-title-k3 {
+    display: inline;
+  }
+
+  .topbar-button-label {
+    display: none;
+  }
+
+  .topbar-compact-button {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+  }
+
+  .topbar-button-icon {
+    font-size: 18px;
+  }
+
+  .content {
+    padding-inline: 10px;
+  }
+
+  .page-title h1,
+  .dashboard-header h1,
+  .dashboard-title,
+  .form-header h1,
+  .incident-header h1,
+  .analytics-hero h1,
+  .management-command-header h1,
+  .investigation-page-header h1 {
+    font-size: clamp(26px, 9vw, 34px);
+  }
+
+  .analytics-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .action-card .primary-action,
+  .action-card button {
+    width: 100%;
+  }
+
+  .card-content {
+    width: 100%;
+  }
+
+  .kpi-card,
+  .chart-box,
+  .table-container,
+  .analytics-kpi-card,
+  .analytics-section-card,
+  .investigation-card,
+  .detail-card,
+  .incident-header-card,
+  .master-content,
+  .panel {
+    padding: 17px;
+    border-radius: 14px;
+  }
+
+  .responsive-table-wrapper table {
+    min-width: 600px;
+  }
+
+  .master-content .responsive-table-wrapper table {
+    min-width: 500px;
+  }
+
+  .edit-button,
+  .delete-button {
+    display: block;
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .report-history-card {
+    padding: 18px;
+  }
+
+  .progress-update-item > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .investigation-header-status {
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .analytics-data-confidence {
+    min-width: 0;
+  }
+}
+
+/* =============================================================
+   VERY SMALL MOBILE
+============================================================= */
+
+@media (max-width: 380px) {
+  .system-title-k3 {
+    display: none;
+  }
+
+  .topbar-left {
+    gap: 7px;
+  }
+
+  .topbar-right {
+    gap: 6px;
+  }
+
+  .menu-button,
+  .topbar-compact-button {
+    width: 39px;
+    min-width: 39px;
+    height: 39px;
+  }
+
+  .content {
+    padding-inline: 8px;
+  }
+
+  .kpi-card,
+  .chart-box,
+  .table-container,
+  .analytics-kpi-card,
+  .analytics-section-card,
+  .investigation-card,
+  .detail-card,
+  .incident-header-card,
+  .master-content {
+    padding: 15px;
+  }
+}
+
+/* =============================================================
+   LANDSCAPE MOBILE
+============================================================= */
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .topbar {
+    height: 62px;
+  }
+
+  .content {
+    min-height: calc(100vh - 62px);
+    padding-top: 14px;
+  }
+
+  .sidebar {
+    padding-top: 68px;
+    overflow-y: auto;
+  }
+
+  .modal-overlay {
+    align-items: flex-start;
+  }
+}

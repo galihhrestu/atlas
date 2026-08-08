@@ -1,4 +1,4 @@
-name: Deploy ATLAS + SIGMA to GitHub Pages
+name: Deploy ATLAS + SIGMA + LRM portal to GitHub Pages
 
 on:
   push:
@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_BASE_PATH: /${{ github.event.repository.name }}/
+      VITE_INSIGHT_K3_URL: ${{ vars.INSIGHT_K3_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
