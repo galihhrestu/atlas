@@ -1,0 +1,60 @@
+# ATLAS + SIGMA
+
+Repositori ini menggabungkan dua aplikasi yang tetap dipisahkan agar mudah direvisi:
+
+- `src/atlas/` — aplikasi ATLAS Webmap.
+- `src/sigma/` — aplikasi SIGMA Operational Monitoring.
+- `public/assets/` — aset dan data SHP milik ATLAS.
+- `public/sigma/` — aset logo SIGMA.
+- `docs/sigma/` — dokumentasi dan berkas Firebase SIGMA.
+
+## Cara menjalankan di laptop
+
+Syarat: Node.js 18.18 atau lebih baru.
+
+```bash
+npm install
+npm run dev
+```
+
+Buka alamat yang diberikan Vite, biasanya `http://localhost:5173/`.
+
+- ATLAS: `http://localhost:5173/`
+- SIGMA: `http://localhost:5173/sigma/`
+
+SIGMA masih memakai akun demo dan `localStorage`, sehingga belum membutuhkan Firebase untuk dicoba.
+
+## Cara merevisi
+
+- Jika mengubah peta, kartu dashboard, berita, atau tampilan ATLAS, buka `src/atlas/`.
+- Jika mengubah halaman, menu, data demo, atau tampilan SIGMA, buka `src/sigma/`.
+- Jika menambah gambar ATLAS, simpan di `public/assets/`.
+- Jika mengganti logo SIGMA, ganti `public/sigma/sigma-mark.svg`.
+
+Jangan mengunggah folder `node_modules/`; folder itu dibuat otomatis oleh `npm install` di setiap laptop.
+
+## Build lokal
+
+```bash
+npm run build
+npm start
+```
+
+Build juga membuat `dist/404.html` agar rute seperti `/sigma/dashboard` tetap dapat dibuka saat di-refresh di GitHub Pages.
+
+## GitHub Pages
+
+Workflow `.github/workflows/deploy-pages.yml` akan membangun dan menerbitkan aplikasi setiap kali ada push ke branch `main`.
+
+Di GitHub, buka `Settings → Pages`, lalu pilih:
+
+1. `Source: GitHub Actions`.
+2. Pastikan repository dapat memakai Pages. Repository private pada akun tertentu dapat membutuhkan paket/upgrade GitHub.
+
+Setelah workflow berhasil, alamatnya berbentuk:
+
+`https://galihhrestu.github.io/atlas/`
+
+SIGMA dapat dibuka dari kartu `SIGMA` di ATLAS atau langsung melalui:
+
+`https://galihhrestu.github.io/atlas/sigma/`
