@@ -1,10 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AtlasApp from './atlas/App'
+import LrmApp from './lrm/App'
 import SigmaApp from './sigma/App'
 import { AppDataProvider } from './sigma/context/AppDataContext'
 import { AuthProvider } from './sigma/context/AuthContext'
 import { ThemeProvider } from './sigma/context/ThemeContext'
 import './atlas/styles.css'
+import './lrm/styles.css'
 import './sigma/styles/globals.css'
 import './root.css'
 
@@ -22,11 +24,20 @@ function SigmaPortal() {
   )
 }
 
+function LrmPortal() {
+  return (
+    <div className="lrm-app">
+      <LrmApp />
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<AtlasApp />} />
       <Route path="/sigma/*" element={<SigmaPortal />} />
+      <Route path="/lrm/*" element={<LrmPortal />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
