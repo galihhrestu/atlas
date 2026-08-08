@@ -19,6 +19,7 @@ type Dashboard = {
   eyebrow: string;
   description: string;
   featured?: boolean;
+  route?: string;
 };
 
 type NavKey = "data" | "topics" | "learn" | "centers" | "engage" | "about" | "news";
@@ -100,6 +101,7 @@ const dashboards: Dashboard[] = [
     name: "SIGMA",
     eyebrow: "Operational Monitoring",
     description: "Sebaran aset, alat berat, pupuk, dan plantation village.",
+    route: "/sigma",
   },
   {
     name: "E-Biodash",
@@ -125,6 +127,7 @@ const dashboards: Dashboard[] = [
     name: "LRM",
     eyebrow: "Land Recovery Monitoring",
     description: "Tata batas areal HTI dan monitoring pemulihan lahan.",
+    route: "/lrm",
   },
   {
     name: "INSIGHT K3",
@@ -952,8 +955,8 @@ function App() {
   };
 
   const handleDashboardClick = (dashboard: Dashboard) => {
-    if (dashboard.name === "SIGMA") {
-      navigate("/sigma");
+    if (dashboard.route) {
+      navigate(dashboard.route);
       return;
     }
     showToast(`${dashboard.name} siap dihubungkan ke dashboard detail.`);

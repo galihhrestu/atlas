@@ -1,12 +1,14 @@
-# ATLAS + SIGMA
+# ATLAS + SIGMA + LRM
 
-Repositori ini menggabungkan dua aplikasi yang tetap dipisahkan agar mudah direvisi:
+Repositori ini menggabungkan tiga aplikasi yang tetap dipisahkan agar mudah direvisi:
 
 - `src/atlas/` — aplikasi ATLAS Webmap.
 - `src/sigma/` — aplikasi SIGMA Operational Monitoring.
+- `src/lrm/` — aplikasi LRM (Land Recovery Monitoring).
 - `public/assets/` — aset dan data SHP milik ATLAS.
 - `public/sigma/` — aset logo SIGMA.
 - `docs/sigma/` — dokumentasi dan berkas Firebase SIGMA.
+- `docs/lrm/` — catatan sumber LRM.
 
 ## Cara menjalankan di laptop
 
@@ -21,6 +23,7 @@ Buka alamat yang diberikan Vite, biasanya `http://localhost:5173/`.
 
 - ATLAS: `http://localhost:5173/`
 - SIGMA: `http://localhost:5173/sigma/`
+- LRM: `http://localhost:5173/lrm/`
 
 SIGMA masih memakai akun demo dan `localStorage`, sehingga belum membutuhkan Firebase untuk dicoba.
 
@@ -28,6 +31,7 @@ SIGMA masih memakai akun demo dan `localStorage`, sehingga belum membutuhkan Fir
 
 - Jika mengubah peta, kartu dashboard, berita, atau tampilan ATLAS, buka `src/atlas/`.
 - Jika mengubah halaman, menu, data demo, atau tampilan SIGMA, buka `src/sigma/`.
+- Jika mengubah dashboard pemulihan lahan, buka `src/lrm/`.
 - Jika menambah gambar ATLAS, simpan di `public/assets/`.
 - Jika mengganti logo SIGMA, ganti `public/sigma/sigma-mark.svg`.
 
@@ -58,3 +62,7 @@ Setelah workflow berhasil, alamatnya berbentuk:
 SIGMA dapat dibuka dari kartu `SIGMA` di ATLAS atau langsung melalui:
 
 `https://galihhrestu.github.io/atlas/sigma/`
+
+LRM dapat dibuka dari kartu `LRM` di ATLAS atau langsung melalui:
+
+`https://galihhrestu.github.io/atlas/lrm/`
